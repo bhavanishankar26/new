@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>WHEATHER APP TASK</title>
+<link rel="stylesheet" href="style1.css">
+</head>
+
+<body> 
+
+
+
+<form >
+ <b> <label for="fname"><font color="orange" font size="6" >Weather in your city</label></b>
+ <input type= "text" id="fname" name="fname" value="visakhapatnam" ></font>
+ <button id="search" onclick="myFunction()">search</button>
+
+<script>
+
+function myFunction() {
+  let a=document.getElementById("fname").value
+  alert(a);
+}
+  document.write("<div class='flex-container'>");
+  for(let i = 0 ; i <=4 ; i++){
+  document.write("<div class='flex-item-left'>")
+  document.write("<section>")
+  document.write("<section class='child'>")
+  document.write("<center><table border='1' cellpadding='2' cellspacing='2'></center>")
+  document.write("<th align='center' bgcolor='orange' colspan='2'>Date:DD/MM/YYYY</th>")
+  document.write("<tr align='center' bgcolor='grey'><td colspan='2'>Temperature</td></tr> ")
+  document.write("<tr align='center' bgcolor='grey'><td>Min</td><td>Max</td></tr>")
+  document.write("<tr align='center' bgcolor='grey'><td>xx.xx</td><td>xx.xx</td></tr>")
+  document.write("<tr align='center' ><td>Pressure</td><td>xx.xx</td></tr>")
+  document.write("<tr align='center'><td>humidity</td><td>xxxx.xx</td></tr>")
+  document.write("</table></border><br>")
+  document.write("</section>")
+  document.write("</div>")
+  }
+  document.write("</div>")
+</script>
+</form>
+</body>
+</html>
