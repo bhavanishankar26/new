@@ -1,0 +1,153 @@
+<html>
+<head>
+<title> weather app task</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body> 
+  
+<div class ="heading">
+ <b> <label for="fname"><font color="orange" font size="6" >Weather in your city</label></b></font>
+ <input type= "text" class="inputvalue" id="fname"  placeholder="Enter a city" >
+ <button id="search" onclick="myFunction()">search</button></div>
+ <div class="weather"></div>
+
+ <div class="flex-container">
+  <div class="flex-item-left">
+   
+  
+ 
+ 
+ <script>
+'use strict';
+function myFunction() {
+
+  var a=document.getElementById("fname").value
+  
+  alert(a); 
+
+const btn = document.querySelector('.btn-weather');
+  const weathercontainer = document.querySelector('.weather');
+  const request = new XMLHttpRequest();
+   request.open('GET',`http://api.openweathermap.org/data/2.5/forecast?q=${a}&appid=1635890035cbba097fd5c26c8ea672a1`);
+request.send();
+
+request.addEventListener('load', function() {
+    const data = JSON.parse(this.responseText);
+  
+    console.log(data);
+
+
+
+
+ let html =`
+
+  
+    
+    
+   
+  <section>
+    <section class="child">
+  <center><table border="1" cellpadding="2" cellspacing="2"></center>
+  <th align="center" bgcolor="orange" colspan="2">${data.list[1].dt_txt}</th>  
+   <tr align="center" bgcolor="grey"><td colspan="2">Temperature</td></tr>   
+    <tr align="center" bgcolor="grey"><td>Min</td><td>Max</td></tr>
+    <tr align="center" bgcolor="grey"><td>${data.list[1].main.temp_min}</td><td>${data.list[1].main.temp_max}</td></tr>
+    <tr align="center" ><td>Pressure</td><td>${data.list[1].main.pressure}</td></tr>
+    <tr align="center"><td>humidity</td><td>${data.list[1].main.humidity}</td></tr>
+    </table></border><br></center>
+    </section>
+  </section>
+  
+
+  
+    
+  
+  <section>
+    <section class="child">
+  <center><table border="1" cellpadding="2" cellspacing="2"></center>
+  <th align="center" bgcolor="orange" colspan="2">${data.list[9].dt_txt}</th>  
+   <tr align="center" bgcolor="grey"><td colspan="2">Temperature</td></tr>   
+    <tr align="center" bgcolor="grey"><td>Min</td><td>Max</td></tr>
+    <tr align="center" bgcolor="grey"><td>${data.list[9].main.temp_min}</td><td>${data.list[9].main.temp_max}</td></tr>
+    <tr align="center" ><td>Pressure</td><td>${data.list[9].main.pressure}</td></tr>
+    <tr align="center"><td>humidity</td><td>${data.list[9].main.humidity}</td></tr>
+    </table></border><br></center>
+    </section>
+  </section>
+  
+
+  
+    
+    
+  <section>
+    <section class="child">
+  <center><table border="1" cellpadding="2" cellspacing="2"></center>
+  <th align="center" bgcolor="orange" colspan="2">${data.list[17].dt_txt}</th>  
+   <tr align="center" bgcolor="grey"><td colspan="2">Temperature</td></tr>   
+    <tr align="center" bgcolor="grey"><td>Min</td><td>Max</td></tr>
+    <tr align="center" bgcolor="grey"><td>${data.list[17].main.temp_min}</td><td>${data.list[17].main.temp_max}</td></tr>
+    <tr align="center" ><td>Pressure</td><td>${data.list[17].main.pressure}</td></tr>
+    <tr align="center"><td>humidity</td><td>${data.list[17].main.humidity}</td></tr>
+    </table></border><br></center>
+    </section>
+  </section>
+ 
+
+  
+    
+    
+  <section>
+    <section class="child">
+  <center><table border="1" cellpadding="2" cellspacing="2"></center>
+  <th align="center" bgcolor="orange" colspan="2">${data.list[25].dt_txt}</th>  
+   <tr align="center" bgcolor="grey"><td colspan="2">Temperature</td></tr>   
+    <tr align="center" bgcolor="grey"><td>Min</td><td>Max</td></tr>
+    <tr align="center" bgcolor="grey"><td>${data.list[25].main.temp_min}</td><td>${data.list[25].main.temp_max}</td></tr>
+    <tr align="center" ><td>Pressure</td><td>${data.list[25].main.pressure}</td></tr>
+    <tr align="center"><td>humidity</td><td>${data.list[25].main.humidity}</td></tr>
+    </table></border><br></center>
+    </section>
+  </section>
+ 
+
+ 
+    
+    
+  <section>
+    <section class="child">
+  <center><table border="1" cellpadding="2" cellspacing="2"></center>
+  <th align="center" bgcolor="orange" colspan="2">${data.list[33].dt_txt}</th>  
+   <tr align="center" bgcolor="grey"><td colspan="2">Temperature</td></tr>   
+    <tr align="center" bgcolor="grey"><td>Min</td><td>Max</td></tr>
+    <tr align="center" bgcolor="grey"><td>${data.list[33].main.temp_min}</td><td>${data.list[33].main.temp_max}</td></tr>
+    <tr align="center" ><td>Pressure</td><td>${data.list[33].main.pressure}</td></tr>
+    <tr align="center"><td>humidity</td><td>${data.list[33].main.humidity}</td></tr>
+    </table></border><br></center>
+    </section>
+  </section>
+  
+ 
+
+  </center>
+
+  
+
+    `;
+    weathercontainer.innerHTML=html;
+    
+
+});
+}
+
+   
+
+
+ </script>
+ </div>
+</div><br>
+
+ 
+
+</body>
+</html>
